@@ -27,7 +27,7 @@ const vintageInkwell = {
   const bookshelf = {
     name: "Ikea Bookshelf",
     location: "Bedroom",
-    description: "This is an Ikea bookshelf. It has some crazy Sweedish name."
+    description: "This is an Ikea bookshelf. It has some crazy Swedish name."
 }
 
 const vintageFan = {

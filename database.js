@@ -13,7 +13,7 @@ let run = loadDatabase("HomeInventoryDatabase");
 
 
 
-function makeData = (dataType) => {
+function makeData = () => {
     for (let obj in run) {
 
         let array = run[obj];
