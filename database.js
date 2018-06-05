@@ -9,75 +9,95 @@ const loadDatabase = function (HomeInventoryDatabase) {
 
 let run = loadDatabase("HomeInventoryDatabase");
 
-console.log(run.crafts[0]);
-
 
 
 let makeData = (dataSet) => {
-    for (let obj in run) {
-
-        let array = run[obj];
-        let para1 = document.createElement('p');
-        let para2 = document.createElement('p');
-        let para3 = document.createElement('p');
 
 
+    // console.log(array)
+
+
+    if (dataSet === "crafts") {
+        let array = run.crafts;
+        let sec = document.createElement("section");
+        console.log(array)
+        array.forEach(element => {
+            console.log(element)
+            let para1 = document.createElement('p');
+            let para2 = document.createElement('p');
+            let para3 = document.createElement('p');
+            para1.textContent = `Name: ${element.name}`
+            para2.textContent = `Location ${element.location}`;
+            para3.textContent = `Description: ${element.description}`;
+            sec.appendChild(para1);
+            sec.appendChild(para2);
+            sec.appendChild(para3);
+            document.querySelector("#myStuff").appendChild(sec)
+        }
+        );
+    }
+    else if (dataSet === "furniture") {
+        let array = run.furniture;
+        let sec = document.createElement("section");
+        console.log(array)
+        array.forEach(element => {
+            console.log(element)
+            let para1 = document.createElement('p');
+            let para2 = document.createElement('p');
+            let para3 = document.createElement('p');
+            para1.textContent = `Name: ${element.name}`
+            para2.textContent = `Location ${element.location}`;
+            para3.textContent = `Description: ${element.description}`;
+            sec.appendChild(para1);
+            sec.appendChild(para2);
+            sec.appendChild(para3);
+            document.querySelector("#myStuff").appendChild(sec)
+        }
+        );
+    }
+    else if (dataSet === "electronics") {
+        let array = run.electronics;
+        let sec = document.createElement("section");
+        console.log(array)
+        array.forEach(element => {
+            console.log(element)
+            let para1 = document.createElement('p');
+            let para2 = document.createElement('p');
+            let para3 = document.createElement('p');
+            para1.textContent = `Name: ${element.name}`
+            para2.textContent = `Location ${element.location}`;
+            para3.textContent = `Description: ${element.description}`;
+            sec.appendChild(para1);
+            sec.appendChild(para2);
+            sec.appendChild(para3);
+            document.querySelector("#myStuff").appendChild(sec)
+        }
+        );
+    } else {
+        let array = run;
         for (i = 0; i < array.length; i++) {
+            
             let sec = document.createElement("section");
-            if (dataSet === "crafts") {
-
-                para1.textContent = `Name: ${run.crafts[i].name}`
-                para2.textContent = `Location ${run.crafts[i].location}`;
-                para3.textContent = `Description: ${run.crafts[i].description}`;
-                sec.appendChild(para1);
-                sec.appendChild(para2);
-                sec.appendChild(para3);
-                document.querySelector("#myStuff").appendChild(sec)
-                
-            } else if (dataSet === "furniture") {
-
-                para1.textContent = `Name: ${array[i].name}`
-                para2.textContent = `Location ${array[i].location}`;
-                para3.textContent = `Description: ${array[i].description}`;
-                sec.appendChild(para1);
-                sec.appendChild(para2);
-                sec.appendChild(para3);
-                document.querySelector("#myStuff").appendChild(sec)
-                
-            }
-            else if (dataSet === "electronics") {
-
-                para1.textContent = `Name: ${run.electronics[i].name}`
-                para2.textContent = `Location ${run.electronics[i].location}`;
-                para3.textContent = `Description: ${run.electronics[i].description}`;
-                sec.appendChild(para1);
-                sec.appendChild(para2);
-                sec.appendChild(para3);
-                document.querySelector("#myStuff").appendChild(sec)
-            } else {
-
+            console.log(array)
+            array.forEach(element => {
+                console.log(element)
                 let para1 = document.createElement('p');
                 let para2 = document.createElement('p');
                 let para3 = document.createElement('p');
-
-                para1.textContent = `Name: ${array[i].name}`
-                para2.textContent = `Location ${array[i].location}`;
-                para3.textContent = `Description: ${array[i].description}`;
-
+                para1.textContent = `Name: ${element.name}`
+                para2.textContent = `Location ${element.location}`;
+                para3.textContent = `Description: ${element.description}`;
                 sec.appendChild(para1);
                 sec.appendChild(para2);
                 sec.appendChild(para3);
-
                 document.querySelector("#myStuff").appendChild(sec)
-
             }
-        }
-
-
+            )}
 
     }
-
 }
+
+
 
 makeData();
 
