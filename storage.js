@@ -45,7 +45,7 @@ const gameCube = {
     location: "Bookshelf",
     description: "This is a Nintendo GameCube. It plays games."
 }
-const bible = {
+const book = {
     name: "Sabriel",
     location: "Bedside table",
     description: "This is a signed copy of Sabriel by Garth Nix."
@@ -61,7 +61,7 @@ const trainAd = {
     description: "This is a vintage ad for a steam locomotive."
 }
 
-HomeInventoryDatabase.crafts.push(vintageInkwell, fountainPen, trainAd, bible)
+HomeInventoryDatabase.crafts.push(vintageInkwell, fountainPen, trainAd, book)
 HomeInventoryDatabase.furniture.push(typingDesk, bookshelf)
 HomeInventoryDatabase.electronics.push(ghibliMovies, gameCube, computer, vintageFan)
 

@@ -7,13 +7,15 @@ const loadDatabase = (HomeInventoryDatabase) => {
     return JSON.parse(databaseString)
 }
 
-//put the database into a variable
-let run = loadDatabase("HomeInventoryDatabase");
 
 
 //function that takes the dataset one wants to look at (or defaults to everything) and creates sections for them and prints to the DOM
 let makeData = (dataSet) => {
     document.querySelector('#myStuff').innerHTML = ""; //clears the current contents of the DOM
+
+    //put the database into a variable
+    let run = loadDatabase("HomeInventoryDatabase");
+
 
     const fragment = document.createDocumentFragment(); //create a document fragment so there is only one write event to the DOM
 
