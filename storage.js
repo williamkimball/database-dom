@@ -46,9 +46,9 @@ const gameCube = {
     description: "This is a Nintendo GameCube. It plays games."
 }
 const bible = {
-    name: "Cambridge Clarion ESV",
+    name: "Sabriel",
     location: "Bedside table",
-    description: "This is a Cambridge Clarion ESV bible bound in black goatskin."
+    description: "This is a signed copy of Sabriel by Garth Nix."
 }
 const ghibliMovies = {
     name: "Studio Ghibli Collection",

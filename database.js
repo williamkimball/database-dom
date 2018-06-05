@@ -9,38 +9,80 @@ const loadDatabase = function (HomeInventoryDatabase) {
 
 let run = loadDatabase("HomeInventoryDatabase");
 
-console.log(run);
-
 
 
 let makeData = (dataSet) => {
-    for (let obj in run) {
+    const fragment = document.createDocumentFragment();
+    const mkPara = () => {
+        return document.createElement('p');
+    }
+    const mkSec = () => {
+        return document.createElement("section")
+    }
 
-        let array = run[obj];
+    if (dataSet === "crafts") {
+        let array = run.crafts;
 
-        for (i = 0; i < array.length; i++) {
-            let sec = document.createElement("section");
-            if (dataSet === "crafts") {
-                console.log(array)
-                let para1 = document.createElement('p');
-                para1.textContent = `Name: ${array[i].name}`
-                sec.appendChild(para1);
-                document.querySelector("#myStuff").appendChild(sec)
-            } else if (dataSet === "furniture") {
-                let para2 = document.createElement('p');
-                para2.textContent = `Name: ${array[i].name}`
-                sec.appendChild(para2);
-                document.querySelector("#myStuff").appendChild(sec)
-            }
-            else if (dataSet === "electronics") {
-                let para3 = document.createElement('p');
-                para3.textContent = `Name: ${array[i].name}`
-                sec.appendChild(para3);
-                document.querySelector("#myStuff").appendChild(sec)
-            } else {
-                let para1 = document.createElement('p');
-                let para2 = document.createElement('p');
-                let para3 = document.createElement('p');
+        array.forEach(element => {
+            let para1 = mkPara();
+            let para2 = mkPara();
+            let para3 = mkPara();
+            let sec = mkSec();
+
+            para1.textContent = `Name: ${element.name}`
+            para2.textContent = `Location ${element.location}`;
+            para3.textContent = `Description: ${element.description}`;
+            sec.appendChild(para1);
+            sec.appendChild(para2);
+            sec.appendChild(para3);
+            fragment.appendChild(sec)
+        }
+        );
+    }
+    else if (dataSet === "furniture") {
+        let array = run.furniture;
+        
+        array.forEach(element => {
+            let sec = mkSec();
+            let para1 = mkPara();
+            let para2 = mkPara();
+            let para3 = mkPara();
+            para1.textContent = `Name: ${element.name}`
+            para2.textContent = `Location ${element.location}`;
+            para3.textContent = `Description: ${element.description}`;
+            sec.appendChild(para1);
+            sec.appendChild(para2);
+            sec.appendChild(para3);
+            fragment.appendChild(sec)
+        }
+        );
+    }
+    else if (dataSet === "electronics") {
+        let array = run.electronics;
+        
+        array.forEach(element => {
+            let sec = mkSec();
+            let para1 = mkPara();
+            let para2 = mkPara();
+            let para3 = mkPara();
+            para1.textContent = `Name: ${element.name}`
+            para2.textContent = `Location ${element.location}`;
+            para3.textContent = `Description: ${element.description}`;
+            sec.appendChild(para1);
+            sec.appendChild(para2);
+            sec.appendChild(para3);
+            fragment.appendChild(sec)
+        }
+        );
+    } else {
+        for (let obj in run) {
+            let array = run[obj];
+            
+            for (i = 0; i < array.length; i++) {
+                let sec = mkSec();
+                let para1 = mkPara();
+                let para2 = mkPara();
+                let para3 = mkPara();
 
                 para1.textContent = `Name: ${array[i].name}`
                 para2.textContent = `Location ${array[i].location}`;
@@ -50,14 +92,14 @@ let makeData = (dataSet) => {
                 sec.appendChild(para2);
                 sec.appendChild(para3);
 
-                document.querySelector("#myStuff").appendChild(sec)
+                fragment.appendChild(sec)
             }
+
         }
-
-
-
-    }
-
+    } document.querySelector('#myStuff').appendChild(fragment)
 }
 
+
+
 makeData();
+
