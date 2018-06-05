@@ -62,34 +62,3 @@ let makeData = (dataSet) => {
 
 makeData();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for (key in run.furniture[0]) {
-//     let p = document.createElement("p");
-//     p.textContent = run.furniture[0][key]
-//     console.log(p)
-// }
-
-
-// Object.keys(run).forEach(function() {
-//     let sec = document.createElement("section");
-//     let para = document.createElement("p")
-
-//     sec.appendChild(para);
-
-//     document.querySelector("#myStuff").appendChild(sec);
-// })
