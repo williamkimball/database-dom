@@ -1,4 +1,5 @@
-section {
+section, form {
     border: solid black 3px;
     margin-bottom: 1%;
 }
+
