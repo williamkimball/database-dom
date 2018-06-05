@@ -7,9 +7,9 @@ HomeInventoryDatabase.electronics = [];
 
 // The ink well is a craft data item
 const vintageInkwell = {
-    name: "Vintage Ink Well",
-    location: "Writing desk",
-    description: "I enjoy this inkwell because it belonged to my grandfather and holds enough ink to survive weeks of writing."
+    name: "Ink Bottle",
+    location: "Typewriter desk",
+    description: "This is a bottle of Diamine Majestic Blue; my favorite ink."
   }
 
   const typingDesk = {
