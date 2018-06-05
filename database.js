@@ -12,6 +12,8 @@ let run = loadDatabase("HomeInventoryDatabase");
 
 
 let makeData = (dataSet) => {
+    document.querySelector('#myStuff').innerHTML = ""
+
     const fragment = document.createDocumentFragment();
     const mkPara = () => {
         return document.createElement('p');
@@ -20,8 +22,7 @@ let makeData = (dataSet) => {
         return document.createElement("section")
     }
 
-    if (dataSet === "crafts") {
-        let array = run.crafts;
+    const runSectionMaker = (array) => {
 
         array.forEach(element => {
             let para1 = mkPara();
@@ -36,48 +37,13 @@ let makeData = (dataSet) => {
             sec.appendChild(para2);
             sec.appendChild(para3);
             fragment.appendChild(sec)
-        }
-        );
+        })
     }
-    else if (dataSet === "furniture") {
-        let array = run.furniture;
-        
-        array.forEach(element => {
-            let sec = mkSec();
-            let para1 = mkPara();
-            let para2 = mkPara();
-            let para3 = mkPara();
-            para1.textContent = `Name: ${element.name}`
-            para2.textContent = `Location ${element.location}`;
-            para3.textContent = `Description: ${element.description}`;
-            sec.appendChild(para1);
-            sec.appendChild(para2);
-            sec.appendChild(para3);
-            fragment.appendChild(sec)
-        }
-        );
-    }
-    else if (dataSet === "electronics") {
-        let array = run.electronics;
-        
-        array.forEach(element => {
-            let sec = mkSec();
-            let para1 = mkPara();
-            let para2 = mkPara();
-            let para3 = mkPara();
-            para1.textContent = `Name: ${element.name}`
-            para2.textContent = `Location ${element.location}`;
-            para3.textContent = `Description: ${element.description}`;
-            sec.appendChild(para1);
-            sec.appendChild(para2);
-            sec.appendChild(para3);
-            fragment.appendChild(sec)
-        }
-        );
-    } else {
+
+    const defaultSectionMaker = () => {
         for (let obj in run) {
             let array = run[obj];
-            
+
             for (i = 0; i < array.length; i++) {
                 let sec = mkSec();
                 let para1 = mkPara();
@@ -96,10 +62,19 @@ let makeData = (dataSet) => {
             }
 
         }
+    }
+
+    if (dataSet === "crafts") {
+        runSectionMaker(run.furniture);
+    }
+    else if (dataSet === "furniture") {
+        runSectionMaker(run.furniture);
+    }
+    else if (dataSet === "electronics") {
+        runSectionMaker(run.electronics);
+    } else {
+        defaultSectionMaker();
     } document.querySelector('#myStuff').appendChild(fragment)
 }
 
-
-
-makeData();
 
