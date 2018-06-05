@@ -18,10 +18,18 @@
         Item description:
         <input type="text" id="itemDescription"><br>
         Item Type:<br>
-        Craft<input type="radio" name="type" id="craft" value="craft"><br>
+        Craft<input type="radio" name="type" id="crafts" value="crafts"><br>
         Furniture<input type="radio" name="type" id="furniture" value="furniture"><br>
         Electronics<input type="radio" name="type" id="electronics" value="electronics"><br>
         <input type="button" value="Add an Item!" id="addItem">
+    </form>
+    <form action="">
+            Show Only These Items<br>
+            Show all<input type="radio" name="showMe" id="all" value="all"><br>
+            Crafts<input type="radio" name="showMe" id="crafts" value="crafts"><br>
+            Furniture<input type="radio" name="showMe" id="furniture" value="furniture"><br>
+            Electronics<input type="radio" name="showMe" id="electronics" value="electronics"><br>
+        <input type="button" value="Show Only Items of Selected Type" id="showThis">
     </form>
     <script src="storage.js"></script>
     <script src="database.js"></script>

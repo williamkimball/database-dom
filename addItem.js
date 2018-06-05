@@ -8,7 +8,7 @@ document.querySelector("#addItem").addEventListener("click", function () {
         name: nameItem,
         location: locationItem,
         description: descriptionItem,
-}
+    }
     if (typeItem === "furniture") {
         HomeInventoryDatabase.furniture.push(item)
     } else if (typeItem === "crafts") {
@@ -17,6 +17,19 @@ document.querySelector("#addItem").addEventListener("click", function () {
         HomeInventoryDatabase.electronics.push(item)
     }
     saveDatabase(HomeInventoryDatabase, "HomeInventoryDatabase")
-    makeData(typeItem);
+    makeData();
+});
 
+document.querySelector("#showThis").addEventListener("click", function () {
+    let showThis = document.querySelector('input[name="showMe"]:checked').value;
+
+    if (showThis === "furniture") {
+        makeData("furniture");
+    } else if (showThis === "crafts") {
+        makeData("crafts");
+    } else if (showThis === "electronics") {
+        makeData("electronics");
+    } else {
+        makeData();
+    }
 });
