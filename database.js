@@ -74,7 +74,8 @@ let makeData = (dataSet) => {
         }
         );
     } else {
-        let array = run;
+        for (let obj in run) {
+        let array = run[obj];
         for (i = 0; i < array.length; i++) {
             
             let sec = document.createElement("section");
